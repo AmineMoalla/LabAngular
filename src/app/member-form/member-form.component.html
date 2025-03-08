@@ -1,0 +1,38 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <!-- <mat-form-field appearance="fill" hidden >
+        <input matInput placeholder="cin" formControlName="cin" hidden >
+    </mat-form-field> -->
+    <mat-form-field appearance="fill" style="display: none;">
+        <input matInput placeholder="cin" formControlName="cin">
+    </mat-form-field>
+
+
+    <br>
+    <mat-form-field appearance="fill" >
+        <input matInput placeholder="cin" formControlName="cin">
+    </mat-form-field>
+    
+   
+
+<br>
+
+
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="name"  formControlName="name"  >
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="type" formControlName="type">
+    </mat-form-field>
+<br>
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="createDate" formControlName="createDate">
+    </mat-form-field>
+
+
+<br>
+    <button type="submit"  >Ajouter</button>
+</form>

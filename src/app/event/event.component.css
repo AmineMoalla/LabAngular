@@ -1,0 +1,74 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.create-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px; /* Espace avant le tableau */
+  }
+  
+  button[routerLink="/create"] {
+    background-color: #406183;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  button[routerLink="/create"]:hover {
+    background-color: #1565c0;
+  }
+  
+  button[routerLink="/create"]:active {
+    transform: scale(0.95);
+  }
+  
+  button[routerLink="/create"] mat-icon {
+    font-size: 20px;
+  }
+  
+
+  /* Bouton Modifier (Jaune) */
+.edit-button {
+    background-color: yellow !important;
+    color: black !important;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .edit-button mat-icon {
+    color: black !important;
+  }
+  
+  .edit-button:hover {
+    background-color: gold !important;
+  }
+  
+  /* Bouton Supprimer (Rouge) */
+  .delete-button {
+    background-color: red !important;
+    color: white !important;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .delete-button mat-icon {
+    color: white !important;
+  }
+  
+  .delete-button:hover {
+    background-color: darkred !important;
+  }
+  

@@ -1,0 +1,62 @@
+{
+  "members": [
+    {
+      "cin": "21632",
+      "name": "amine",
+      "type": "etudiant",
+      "createDate": "10-08-2024",
+      "id": "4b8c"
+    },
+    {
+      "id": "a1f0",
+      "cin": "156987",
+      "name": "Yosr",
+      "type": "admin",
+      "createDate": "25-10-2024"
+    }
+  ],
+  "evts": [
+    {
+      "titre": "conf",
+      "dateDebut": "12/12/2024",
+      "dateFin": "12/12/2024",
+      "lieu": "tunis",
+      "id": "12345"
+    },
+    {
+      "id": "12345",
+      "titre": "conf",
+      "dateDebut": "12/12/2024",
+      "dateFin": "12/12/2024",
+      "lieu": "Sfax"
+    },
+    {
+      "id": "54321",
+      "titre": "journée scientifique",
+      "dateDebut": "10/10/2024",
+      "dateFin": "11/11/2024",
+      "lieu": "Tunis"
+    },
+    {
+      "id": "f450",
+      "titre": "conference",
+      "dateDebut": "10-10-2025",
+      "dateFin": "11-10-2025",
+      "lieu": "sfax"
+    },
+    {
+      "id": "d75f",
+      "titre": "titre",
+      "dateDebut": "10-10-2025",
+      "dateFin": "11-11-2025",
+      "lieu": "tunis"
+    },
+    {
+      "titre": "conf",
+      "dateDebut": "2025-02-18T23:00:00.000Z",
+      "dateFin": "2025-02-26T23:00:00.000Z",
+      "lieu": "sfax",
+      "id": "1666"
+    }
+  ]
+}
