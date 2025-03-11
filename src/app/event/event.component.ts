@@ -7,6 +7,7 @@ import { EventService } from 'src/services/event.service';
 import { ModalEvtComponent } from '../modal-evt/modal-evt.component';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { EventDetailsComponent } from '../event-details/event-details.component';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-event',
@@ -50,11 +51,30 @@ export class EventComponent {
     }
   }
 
-  delete(id: String): void {
-    this.se.deleteEvents(id).subscribe(() => {
-      this.fetchData();
+  // delete(id: String): void {
+  //   this.se.deleteEvents(id).subscribe(() => {
+  //     this.fetchData();
+  //   });
+  // }
+
+  delete(id:String):void{
+//lancer la boite de dialogue
+    let dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      height: '200px',
+      width: '300px',
+    });
+    //su user fait un click sur le bouton confirm
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`); 
+      if(result){
+        this.se.deleteEvents(id).subscribe(()=>{
+          this.fetchData();
+        });
+      }
     });
   }
+
+
 
   //lancer l'ouverture du Modal
   open() {

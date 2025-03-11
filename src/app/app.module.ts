@@ -33,6 +33,8 @@ import { ModalEvtComponent } from './modal-evt/modal-evt.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EventDetailsComponent } from './event-details/event-details.component';
+import { ModalPubComponent } from './modal-pub/modal-pub.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -50,6 +52,8 @@ import { EventDetailsComponent } from './event-details/event-details.component';
     ToolComponent,
     ModalEvtComponent,
     EventDetailsComponent,
+    ModalPubComponent,
+  
    
 
   ],
@@ -72,12 +76,10 @@ import { EventDetailsComponent } from './event-details/event-details.component';
     MatMenuModule,
     MatSortModule,
     MatPaginatorModule,
-    MatDatepickerModule,MatNativeDateModule
-     
+    MatDatepickerModule,MatNativeDateModule,
+     MatListModule ,
 
-    
-
-    
+     MatFormFieldModule, MatSelectModule 
 
   
   ],

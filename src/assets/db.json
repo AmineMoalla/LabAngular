@@ -17,13 +17,6 @@
   ],
   "evts": [
     {
-      "titre": "conf",
-      "dateDebut": "12/12/2024",
-      "dateFin": "12/12/2024",
-      "lieu": "tunis",
-      "id": "12345"
-    },
-    {
       "id": "12345",
       "titre": "conf",
       "dateDebut": "12/12/2024",
@@ -43,20 +36,35 @@
       "dateDebut": "10-10-2025",
       "dateFin": "11-10-2025",
       "lieu": "sfax"
-    },
-    {
-      "id": "d75f",
-      "titre": "titre",
-      "dateDebut": "10-10-2025",
-      "dateFin": "11-11-2025",
-      "lieu": "tunis"
-    },
-    {
-      "titre": "conf",
-      "dateDebut": "2025-02-18T23:00:00.000Z",
-      "dateFin": "2025-02-26T23:00:00.000Z",
-      "lieu": "sfax",
-      "id": "1666"
     }
+  ],
+  "pubs": [
+    {
+    
+       "id": "1",
+       "type": "article",
+      "titre": "titre1",
+      "lien": "lien1",
+      "date": "10-10-2024",
+      "sourcePdf": "sourcePdf1"
+    },
+    {
+      "id": "2",
+      "type": "article",
+      "titre": "titre2",
+      "lien": "lien2",
+      "date": "10-10-2024",
+      "sourcePdf": "sourcePdf2"
+    },
+    {
+      "id": "3",
+      "type": "article",
+      "titre": "titre3",
+      "lien": "lien3",
+      "date": "10-10-2024",
+      "sourcePdf": "sourcePdf3"
+    }
+  
+   
   ]
 }
