@@ -35,7 +35,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { ModalPubComponent } from './modal-pub/modal-pub.component';
 import { MatSelectModule } from '@angular/material/select';
-
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+import { firebaseConfig } from './environnement';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -53,6 +56,7 @@ import { MatSelectModule } from '@angular/material/select';
     ModalEvtComponent,
     EventDetailsComponent,
     ModalPubComponent,
+    LoginComponent,
   
    
 
@@ -79,7 +83,10 @@ import { MatSelectModule } from '@angular/material/select';
     MatDatepickerModule,MatNativeDateModule,
      MatListModule ,
 
-     MatFormFieldModule, MatSelectModule 
+     MatFormFieldModule, MatSelectModule ,
+
+     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
 
   
   ],

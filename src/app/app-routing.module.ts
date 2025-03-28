@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EventComponent } from './event/event.component';
 import { ArticleComponent } from './article/article.component';
 import { ToolComponent } from './tool/tool.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
 
@@ -23,7 +24,7 @@ const routes: Routes = [
 
   {path:'',
     pathMatch:'full',
-    component:MemberComponent
+   redirectTo:'login'
     
     },
 
@@ -63,7 +64,12 @@ const routes: Routes = [
               component:MemberComponent
               
               },
-
+              {
+                path:'login',
+                pathMatch:'full',
+                component:LoginComponent
+                
+                },
 
     {path:'**',
       pathMatch:'full',
