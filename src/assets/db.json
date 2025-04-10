@@ -5,44 +5,105 @@
       "name": "amine",
       "type": "etudiant",
       "createDate": "10-08-2024",
-      "id": "4b8c"
+      "id": "4b8c",
+      "tabEvents": [
+        {
+          "id": "12345",
+          "titre": "journée",
+          "dateDebut": "10/10/2024",
+          "dateFin": "11/11/2024",
+          "lieu": "Sfax"
+        },
+        {
+          "id": "54321",
+          "titre": "journée scientifique",
+          "dateDebut": "10/10/2024",
+          "dateFin": "11/11/2024",
+          "lieu": "Tunis"
+        }
+      ]
     },
     {
       "id": "a1f0",
       "cin": "156987",
       "name": "Yosr",
       "type": "admin",
-      "createDate": "25-10-2024"
+      "createDate": "25-10-2024",
+      "tabEvents": [
+        {
+          "id": "12345",
+          "titre": "journée",
+          "dateDebut": "10/10/2024",
+          "dateFin": "11/11/2024",
+          "lieu": "Sfax"
+        },
+        {
+          "id": "54321",
+          "titre": "journée scientifique",
+          "dateDebut": "10/10/2024",
+          "dateFin": "11/11/2024",
+          "lieu": "Tunis"
+        }
+      ]
+    },
+    {
+      "id": "a74e",
+      "cin": "159",
+      "name": "slim",
+      "type": "etudiant",
+      "createDate": "11-12-2024", 
+      "tabEvents": [
+        {
+          "id": "12345",
+          "titre": "journée",
+          "dateDebut": "10/10/2024",
+          "dateFin": "11/11/2024",
+          "lieu": "Sfax"
+        },
+        {
+          "id": "54321",
+          "titre": "journée scientifique",
+          "dateDebut": "10/10/2024",
+          "dateFin": "11/11/2024",
+          "lieu": "Tunis"
+        },
+        {
+          "titre": "Conference",
+          "dateDebut": "10/10/2024",
+          "dateFin": "11/12/2024",
+          "lieu": "Tunis",
+          "id": "7595648"
+        }
+      ]
     }
   ],
   "evts": [
     {
-      "id": "12345",
-      "titre": "conf",
-      "dateDebut": "12/12/2024",
-      "dateFin": "12/12/2024",
-      "lieu": "Sfax"
+     "titre": "journée",
+      "dateDebut": "10/10/2024",
+      "dateFin": "11/11/2024",
+      "lieu": "Sfax",
+      "id": "12345"
     },
     {
-      "id": "54321",
       "titre": "journée scientifique",
       "dateDebut": "10/10/2024",
       "dateFin": "11/11/2024",
-      "lieu": "Tunis"
+      "lieu": "Tunis",
+      "id": "54321"
     },
     {
-      "id": "f450",
-      "titre": "conference",
-      "dateDebut": "10-10-2025",
-      "dateFin": "11-10-2025",
-      "lieu": "sfax"
+      "titre": "Conference",
+      "dateDebut": "10/10/2024",
+      "dateFin": "11/12/2024",
+      "lieu": "Tunis",
+      "id": "7595648"
     }
   ],
   "pubs": [
     {
-    
-       "id": "1",
-       "type": "article",
+      "id": "1",
+      "type": "article",
       "titre": "titre1",
       "lien": "lien1",
       "date": "10-10-2024",
@@ -64,7 +125,18 @@
       "date": "10-10-2024",
       "sourcePdf": "sourcePdf3"
     }
-  
-   
+  ],
+  "tools" :
+  [
+    { "id":"123",
+    "date":"2023-01-01",
+    "source":"source1"
+
+    },
+    { "id":"456",
+    "date":"2023-01-01",
+    "source":"source2"
+
+    }
   ]
 }

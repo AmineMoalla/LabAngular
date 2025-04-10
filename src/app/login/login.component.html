@@ -1,13 +1,19 @@
-<form (ngSubmit)="sub()">
-    <mat-form-field appearance="fill">
+<div class="login-container">
+  <form (ngSubmit)="sub()" class="login-form">
+    <h2>Se connecter</h2>
+
+    <mat-form-field appearance="fill" class="full-width">
       <mat-label>Email</mat-label>
       <input matInput type="email" placeholder="Email" [(ngModel)]="email" name="email" required>
     </mat-form-field>
-  
-    <mat-form-field appearance="fill">
-      <mat-label>Password</mat-label>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Mot de passe</mat-label>
       <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
     </mat-form-field>
-  
-    <button mat-raised-button color="primary" type="submit" [disabled]="!email || !password">Connecter</button>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!email || !password">
+      Se connecter
+    </button>
   </form>
+</div>

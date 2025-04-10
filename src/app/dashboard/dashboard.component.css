@@ -1,0 +1,55 @@
+.card-container {
+    display: flex;
+    justify-content: space-between; /* ou center / start selon le besoin */
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap; /* pour que ça passe bien sur petits écrans */
+  }
+  
+  mat-card {
+    flex: 1 1 200px; /* largeur minimale avec croissance */
+    max-width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+  }
+  
+  mat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  mat-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #3f51b5;
+  }
+  
+  mat-card-content {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    padding: 1rem 0;
+  }
+
+  .charts-container {
+    display: flex;
+    justify-content: center; /* ou space-between / flex-start selon ton besoin */
+    align-items: center;
+    gap: 2rem; /* espace entre les deux graphiques */
+    flex-wrap: wrap; /* pour gérer le responsive */
+    padding: 1rem;
+  }
+  
+  .chart-wrapper {
+    width: 450px;
+    height: 400px;
+  }
+  
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  

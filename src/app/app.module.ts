@@ -39,7 +39,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { firebaseConfig } from './environnement';
 import { LoginComponent } from './login/login.component';
-
+import {MatCardModule} from '@angular/material/card';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -82,6 +83,8 @@ import { LoginComponent } from './login/login.component';
     MatPaginatorModule,
     MatDatepickerModule,MatNativeDateModule,
      MatListModule ,
+      MatCardModule,
+      NgChartsModule,
 
      MatFormFieldModule, MatSelectModule ,
 
