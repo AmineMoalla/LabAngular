@@ -43,6 +43,7 @@ updateMember(id: string, member: Member): Observable<void> {
 
 
 AddMemberToPub(pubId: string, memberId: string): Observable<void> {
+  console.log('memberId:', memberId); // Debugging
   return this.http.get<any>(`http://localhost:3000/members/${memberId}`).pipe(
     switchMap(member => {
       const updatedTabPubs = member.tabPubs || [];
@@ -52,13 +53,11 @@ AddMemberToPub(pubId: string, memberId: string): Observable<void> {
           tabPubs: updatedTabPubs
         });
       } else {
-        // Si déjà présent, retourner un Observable vide
         return of(void 0);
       }
     })
   );
 }
-
 
 
 }

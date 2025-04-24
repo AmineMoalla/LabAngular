@@ -12,149 +12,98 @@ import { ChartDataset, ChartOptions } from 'chart.js';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  NB_Members : number = 0;
-  NB_Events : number = 0;
-  NB_Articles : number = 0;
-  NB_Tools : number = 0;
-NB_Etudiant : number = 0;
-NB_Admin : number = 0;
-NB_Tunis : number = 0;
-NB_Sfax : number = 0;
-tab_names : string[] = [];
-tab_events : number[] = [];
+  NB_Members = 0;
+  NB_Events = 0;
+  NB_Articles = 0;
+  NB_Tools = 0;
+  NB_Etudiant = 0;
+  NB_Admin = 0;
+  NB_Tunis = 0;
+  NB_Sfax = 0;
 
-  chartDataPie: ChartDataset[] = [
-    {
-      // ⤵️ Add these
-      label: '$ in millions',
-      data: [ this.NB_Etudiant, this.NB_Admin]
-    }
-  ];
-  chartLabelsPie: string[] = ["etudiant","admin"];
+  tab_names: string[] = [];
+  tab_events: number[] = [];
+  tab_eventss: string[] = [];
+
+  chartDataPie: ChartDataset[] = [{ label: 'Type Membres', data: [] }];
+  chartLabelsPie: string[] = ["etudiant", "admin"];
   chartOptions: ChartOptions = {};
 
-
-
-
-  chartDataLieu: ChartDataset[] = [
-    {
-      // ⤵️ Add these
-      label: '$ in millions',
-      data: [ this.NB_Sfax, this.NB_Tunis]
-    }
-  ];
-  chartLabelsLieu: string[] = ["Sfax","Tunis"];
+  chartDataLieu: ChartDataset[] = [{ label: 'Événements par Lieu', data: [] }];
+  chartLabelsLieu: string[] = ["Sfax", "Tunis"];
   chartOptionsLieu: ChartOptions = {};
 
-
-
-  chartDataLine: ChartDataset[] = [
-    {
-      // ⤵️ Add these
-      label: '$ in millions',
-      data: []
-    }
-  ];
+  chartDataLine: ChartDataset[] = [{ label: 'Événements par Membre', data: [] }];
   chartLabelsLine: string[] = [];
   chartOptionsLine: ChartOptions = {};
 
+  chartDataBar: ChartDataset[] = [{ label: 'Événements par Lieu', data: [] }];
+  chartLabelsBar: string[] = [];
+  chartOptionsBar: ChartOptions = {};
 
-  chartDatabar: ChartDataset[] = [
-    {
-     label:'Nombre des etudiants',
-      data: []
-    }
-  ];
-  chartLabelsbar: string[] = ['Sfax', 'Tunis'];
-  chartOptionsbar: ChartOptions = {};
-
-
-
-
-  constructor(private ms: MemberService, private ps:PubService,private es:EventService,private ts:ToolService) {
-  {
-    this.ms.getAllMembers().subscribe((data: any) => {
-      this.NB_Members = data.length;
-         for(let i=0;i<this.NB_Members;i++)
-         {
-          if(data[i].type=="etudiant")
-          {
-            this.NB_Etudiant++;
-           
-          }
-          else
-          {
-            this.NB_Admin++;
-            
-          }
-         }
-         console.log("nbadmin",this.NB_Admin);
-         console.log("nbetudiant",this.NB_Etudiant);
-
-         this.chartDataPie=[
-          {
-          data:[this.NB_Etudiant,this.NB_Admin]
-    }]
-
-for(let i=0;i<this.NB_Members;i++)
-{
-  //this.chartLabelsLine.push(data[i].name);
-  this.tab_names.push(data[i].name);
-  this.tab_events.push(data[i].tabEvents.length);
-  
-}
-this.chartLabelsLine=this.tab_names;
-this.chartDataLine=[
-{
-data:this.tab_events
-}
-]
-console.log("noms",this.chartLabelsLine);
-
-
-    });
-
-    this.es.getAllEvents().subscribe((data: any) => {
-      this.NB_Events = data.length;
-
-
-      for(let i=0;i<this.NB_Events;i++)
-        {
-         if(data[i].lieu=="Sfax")
-         {
-           this.NB_Sfax++;
-          
-         }
-         else
-         {
-           this.NB_Tunis++;
-           
-         }
-        }
-        // console.log("nbadmin",this.NB_Admin);
-        // console.log("nbetudiant",this.NB_Etudiant);
-
-        this.chartDataLieu=[
-         {
-         data:[this.NB_Sfax,this.NB_Tunis]
-   }]
-
-   this.chartDatabar=[
-    {
-      data:[this.NB_Sfax,this.NB_Tunis] 
-    }
-  ]
-   
-    });
-    this.ps.getAllPubs().subscribe((data: any) => {
-      this.NB_Articles = data.length;
-    });
-
-    this.ts.getallTools().subscribe((data: any) => {
-      this.NB_Tools = data.length;
-    });
-
+  constructor(
+    private ms: MemberService,
+    private ps: PubService,
+    private es: EventService,
+    private ts: ToolService
+  ) {
+    this.loadMembers();
+    this.loadEvents();
+    this.loadPubs();
+    this.loadTools();
   }
 
-}
+  loadMembers() {
+    this.ms.getAllMembers().subscribe((data: any[]) => {
+      this.NB_Members = data.length;
+
+      data.forEach(member => {
+        if (member.type === "etudiant") this.NB_Etudiant++;
+        else this.NB_Admin++;
+
+        this.tab_names.push(member.name);
+        this.tab_events.push(member.tabEvents?.length || 0);
+      });
+
+      this.chartDataPie = [{ label: 'Type Membres', data: [this.NB_Etudiant, this.NB_Admin] }];
+      this.chartLabelsLine = this.tab_names;
+      this.chartDataLine = [{ label: 'Événements par Membre', data: this.tab_events }];
+    });
+  }
+
+  loadEvents() {
+    this.es.getAllEvents().subscribe((data: any[]) => {
+      this.NB_Events = data.length;
+
+      data.forEach(event => {
+        if (event.lieu === "Sfax") this.NB_Sfax++;
+        else if (event.lieu === "Tunis") this.NB_Tunis++;
+      });
+
+      this.chartDataLieu = [{ label: 'Événements par Lieu', data: [this.NB_Sfax, this.NB_Tunis] }];
+    });
+
+    this.es.getAllEvents().subscribe((response: any[]) => {
+      this.tab_eventss = [...new Set(response.map(event => event.lieu))];
+      this.chartLabelsBar = this.tab_eventss;
+
+      const eventCounts = this.tab_eventss.map(lieu =>
+        response.filter(event => event.lieu === lieu).length
+      );
+
+      this.chartDataBar = [{ label: 'Événements par Lieu', data: eventCounts }];
+    });
+  }
+
+  loadPubs() {
+    this.ps.getAllPubs().subscribe((data: any[]) => {
+      this.NB_Articles = data.length;
+    });
+  }
+
+  loadTools() {
+    this.ts.getallTools().subscribe((data: any[]) => {
+      this.NB_Tools = data.length;
+    });
+  }
 }
