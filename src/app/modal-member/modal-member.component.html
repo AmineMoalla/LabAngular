@@ -1,0 +1,16 @@
+<mat-dialog-content>
+<mat-form-field>
+  <mat-label>Favorite food</mat-label>
+  <mat-select formControlName="idMembre">
+    <mat-option *ngFor="let member of membres" >
+      {{member.name}}
+      {{member.cin}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary" (click)="save()" >Save</button>
+</mat-dialog-actions>

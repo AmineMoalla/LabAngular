@@ -1,6 +1,6 @@
 <!-- <h2 mat-dialog-title>{{description}}</h2> -->
 
-<mat-dialog-content >
+<mat-dialog-content [formGroup]="form" >
   
     <mat-form-field>
         <input matInput
@@ -9,20 +9,20 @@
     </mat-form-field>
 <br> 
 <mat-form-field>
-  <mat-label>Favorite food</mat-label>
-  <mat-select [(ngModel)]="selectedValue" name="type">
+  <mat-label>Type</mat-label>
+  <mat-select formControlName="type">
     <mat-option *ngFor="let type of types" [value]="type.value">
       {{type.viewValue}}
     </mat-option>
   </mat-select>
 </mat-form-field>
-<p> Selected Type: {{selectedValue}} </p>
+<!-- <p> Selected Type: {{selectedValue}} </p> -->
 
 
     <br>
     <mat-form-field>
         <mat-label>Choose a date</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <input matInput [matDatepicker]="picker" formControlName="date">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -47,6 +47,6 @@
 </mat-dialog-content>
 
 <mat-dialog-actions>
-    <button class="mat-raised-button" >Close</button>
-    <button class="mat-raised-button mat-primary">Save</button>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary" (click)="save()" >Save</button>
 </mat-dialog-actions>

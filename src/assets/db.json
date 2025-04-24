@@ -21,6 +21,12 @@
           "dateFin": "11/11/2024",
           "lieu": "Tunis"
         }
+      ],
+      "tabPubs": [
+        "1"
+      ],
+      "tabTools": [
+        "123"
       ]
     },
     {
@@ -51,7 +57,7 @@
       "cin": "159",
       "name": "slim",
       "type": "etudiant",
-      "createDate": "11-12-2024", 
+      "createDate": "11-12-2024",
       "tabEvents": [
         {
           "id": "12345",
@@ -79,7 +85,7 @@
   ],
   "evts": [
     {
-     "titre": "journée",
+      "titre": "journée",
       "dateDebut": "10/10/2024",
       "dateFin": "11/11/2024",
       "lieu": "Sfax",
@@ -124,19 +130,29 @@
       "lien": "lien3",
       "date": "10-10-2024",
       "sourcePdf": "sourcePdf3"
+    },
+    {
+      "id": "abca",
+      "type": "Conf",
+      "titre": "titre4",
+      "date": "2025-04-16T23:00:00.000Z",
+      "lien": "lien4",
+      "sourcePdf": "source4"
+    },
+    {
+      "id": "6db0"
     }
   ],
-  "tools" :
-  [
-    { "id":"123",
-    "date":"2023-01-01",
-    "source":"source1"
-
+  "tools": [
+    {
+      "id": "123",
+      "date": "2023-01-01",
+      "source": "source1"
     },
-    { "id":"456",
-    "date":"2023-01-01",
-    "source":"source2"
-
+    {
+      "id": "456",
+      "date": "2023-01-01",
+      "source": "source2"
     }
   ]
 }

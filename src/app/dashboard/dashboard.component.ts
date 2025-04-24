@@ -59,6 +59,16 @@ tab_events : number[] = [];
   chartOptionsLine: ChartOptions = {};
 
 
+  chartDatabar: ChartDataset[] = [
+    {
+     label:'Nombre des etudiants',
+      data: []
+    }
+  ];
+  chartLabelsbar: string[] = ['Sfax', 'Tunis'];
+  chartOptionsbar: ChartOptions = {};
+
+
 
 
   constructor(private ms: MemberService, private ps:PubService,private es:EventService,private ts:ToolService) {
@@ -128,6 +138,12 @@ console.log("noms",this.chartLabelsLine);
          {
          data:[this.NB_Sfax,this.NB_Tunis]
    }]
+
+   this.chartDatabar=[
+    {
+      data:[this.NB_Sfax,this.NB_Tunis] 
+    }
+  ]
    
     });
     this.ps.getAllPubs().subscribe((data: any) => {

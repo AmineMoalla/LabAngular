@@ -1,4 +1,6 @@
 import { Evt } from "./Event";
+import { Pub } from "./Pub";
+import { Tool } from "./Tool";
 
 export interface Member
 {
@@ -7,5 +9,7 @@ export interface Member
     name:string ,
     type:string,
     createDate:string,
-    tabEvents:Evt[]
+    tabEvents:Evt[],
+    tabPubs:Pub[],
+    tabTools:Tool[]
 }
